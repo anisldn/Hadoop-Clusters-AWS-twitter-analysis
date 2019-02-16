@@ -1,0 +1,116 @@
+
+172.31.43.223 Master
+172.31.36.35 Slave1
+172.31.43.101 Slave2
+
+Master:
+ 
+1  sudo hostname master
+    
+2  sudo vim /etc/hosts
+    
+3  sudo ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+    
+4  sudo cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+    
+5  sudo vim ~/.ssh/authorized_keys
+    
+6  ssh slave1
+
+    
+8  sudo vim /etc/hosts
+    
+9  sudo vim ~/.ssh/authorized_keys
+ 
+ 
+21  sudo cat id_rsa
+   
+22  sudo chown id_rsa
+   
+23  sudo chmod 777 id_rsa
+   
+24  cd
+   
+25  ssh slave1
+   
+26  ssh slave2
+   
+27  sudo apt-get update
+   
+28  service iptable status off
+   
+29  sudo apt-get install openjdk-8-jdk
+   
+30  java -version
+   
+31  sudo apt install ntp
+   
+32  sudo apt-get install hugepages
+   
+33  sudo hugeadm --thp-never
+   
+34  sudo apt-get update
+   
+35  cat /etc/hosts
+   
+36  cd /etc/apt/ 
+   
+37  sudo chmod 777 sources.list.d/
+   
+38  cd sources.list.d/
+   
+39  sudo wget http://public-repo-1.hortonworks.com/ambari/ubuntu16/2.x/updates/2.6.0.0/ambari.list
+   
+40  sudo apt-get update
+   
+41  cd
+   
+42  sudo apt-get install ambari-server
+   
+43  sudo apt-get install ambari-agent
+  
+master 
+44  sudo ambari-server setup
+   
+45  sudo nano /etc/ambari-agent/conf/ambari-agent.ini
+   
+46  sudo ambari-agent restart
+   
+47  	sudo ambari-server restart
+   
+48  python /usr/lib/python2.6/site-packages/ambari_agent/HostCleanup.py --silent --skip=users
+   
+49  sudo python /usr/lib/python2.6/site-packages/ambari_agent/HostCleanup.py --silent --skip=users
+   
+50  sudo nano /etc/
+   
+
+slave1 et slave2
+
+30  sudo nano /etc/ambari-agent/conf/ambari-agent.ini
+   
+31  sudo ambari-agent restart
+   
+32  sudo python /usr/lib/python2.6/site-packages/ambari_agent/HostCleanup.py --silent --skip=users
+   
+33  cd /etc/mysql/
+   
+34  ls
+   
+35  cd mysql.conf.d/
+   
+36  ls
+   
+37  sudo nano mysqld.cnf 
+   
+38  cd
+   
+39  clear
+   
+40  sudo apt-get update
+   
+41  sudo ambari-agent restart
+
+
+
+
